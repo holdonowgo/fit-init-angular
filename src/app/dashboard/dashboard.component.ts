@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import $ from 'jquery';
+import c3 from 'c3';
 
 @Component({
   selector: 'app-dashboard',
@@ -8,11 +9,17 @@ import $ from 'jquery';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
 
-  toggleSideBar(): void {
-  $('.ui.sidebar').sidebar('toggle');
-  }
+    let chart = c3.generate({
+      data: {
+          columns: [
+              ['data1', 30, 200, 100, 400, 150, 250],
+              ['data2', 130, 100, 140, 200, 150, 50]
+          ],
+          type: 'spline'
+      }
+    }); }
 
   ngOnInit() {
   }
