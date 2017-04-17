@@ -22,9 +22,9 @@ export class NavbarComponent implements OnInit {
           Whether you want to loose 200lbs or get 1st place in that turkey trot 5k, fit-init provides the tools to get you there.
           What are you waiting for?!`;
 
-  toggleSideBar(): void {
-    $('.ui.sidebar').sidebar('toggle');
-  }
+  // toggleSideBar(): void {
+  //   $('.ui.sidebar').sidebar('toggle');
+  // }
 
   ngOnInit() {
   }
