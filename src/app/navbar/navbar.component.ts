@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import $ from 'jquery';
 
 @Component({
   selector: 'app-navbar',
@@ -20,6 +21,10 @@ export class NavbarComponent implements OnInit {
           In addition we have routines, exercises and more to get you started.
           Whether you want to loose 200lbs or get 1st place in that turkey trot 5k, fit-init provides the tools to get you there.
           What are you waiting for?!`;
+
+  toggleSideBar(): void {
+    $('.ui.sidebar').sidebar('toggle');
+  }
 
   ngOnInit() {
   }
