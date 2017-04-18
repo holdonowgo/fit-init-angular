@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Http, Response } from '@angular/http';
 
 @Component({
   selector: 'app-searchbar',
@@ -7,9 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchbarComponent implements OnInit {
 
-  constructor() { }
+  http: Http;
+  link = `http://the-ipa-api.herokuapp.com/ipa-api/search?name=`;
+
+  constructor(http: Http) {
+    this.http = http
+}
 
   ngOnInit() {
+  }
+
+  performSearch(query: HTMLInputElement): void {
+    var apiLink = this.link + query.value;
+    console.log(apiLink);
+    this.http.get(`http://the-ipa-api.herokuapp.com/ipa-api/search?name=${apiLink}`)
+    .subscribe((res: Response) => {
+      console.log(res.json());
+    });
   }
 
 }

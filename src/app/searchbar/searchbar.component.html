@@ -1,4 +1,4 @@
 <div class="ui action input">
-  <input type="text" placeholder="Search...">
-  <button (click)="performSearch()" class="ui button">Search</button>
+  <input type="text" placeholder="Search..." #query>
+  <button (click)="performSearch(query)" class="ui button">Search</button>
 </div>
