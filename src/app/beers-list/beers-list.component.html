@@ -1,5 +1,5 @@
 <div class="ui link cards">
-  <div class="card" *ngFor="let beer of beers">
+  <div class="card" *ngFor="let beer of beerList" (result)="result($event)">
     <div class="image">
       <img src="{{beer.label_url}}">
     </div>
