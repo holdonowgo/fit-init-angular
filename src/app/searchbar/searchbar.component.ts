@@ -11,17 +11,20 @@ import { Beer } from '../beer.model';
 export class SearchbarComponent implements OnInit {
   @Output() beerList = [];
 
+  loading: boolean;
   http: Http;
   link = `http://the-ipa-api.herokuapp.com/ipa-api/search?name=`;
 
   constructor(http: Http) {
     this.http = http
-}
+  }
 
   ngOnInit() {
+    this.loading = false;
   }
 
   performSearch(query: HTMLInputElement): void {
+    this.loading = true;
     var apiLink = this.link + query.value;
     this.http.get(apiLink)
     .subscribe((res: Response) => {
@@ -30,6 +33,7 @@ export class SearchbarComponent implements OnInit {
       for (let i = 0; i < resultArray.length; i++) {
           var beer = new Beer(resultArray[i]);
           beerArray.push(beer);
+          this.loading = false;
       }
       console.log(beerArray);
 

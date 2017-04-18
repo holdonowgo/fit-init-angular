@@ -2,4 +2,7 @@
   <input type="text" placeholder="Search..." #query>
   <button (click)="performSearch(query)" class="ui button">Search</button>
 </div>
+<div *ngIf="loading">
+  Loading...
+</div>
 <app-beers-list [beerList]="beerList"></app-beers-list>
