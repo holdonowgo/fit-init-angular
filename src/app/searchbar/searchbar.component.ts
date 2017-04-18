@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter,
+ Output,} from '@angular/core';
 import { Http, Response } from '@angular/http';
+import { Beer } from '../beer.model';
 
 @Component({
   selector: 'app-searchbar',
@@ -7,6 +9,7 @@ import { Http, Response } from '@angular/http';
   styleUrls: ['./searchbar.component.css']
 })
 export class SearchbarComponent implements OnInit {
+  @Output() beerList = [];
 
   http: Http;
   link = `http://the-ipa-api.herokuapp.com/ipa-api/search?name=`;
@@ -23,7 +26,15 @@ export class SearchbarComponent implements OnInit {
     console.log(apiLink);
     this.http.get(`http://the-ipa-api.herokuapp.com/ipa-api/search?name=${apiLink}`)
     .subscribe((res: Response) => {
-      console.log(res.json());
+      var resultArray = res.json();
+      var beerArray = [];
+      for (let i = 0; i < resultArray.length; i++) {
+          var beer = new Beer(resultArray[i]);
+          beerArray.push(beer);
+      }
+      console.log(beerArray);
+
+      this.beerList = beerArray;
     });
   }
 

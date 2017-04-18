@@ -2,7 +2,9 @@ import {
  Component,
  EventEmitter,
  Input,
- Output
+ Output,
+ SimpleChanges,
+ OnChanges
  } from '@angular/core';
  import { Beer } from '../beer.model';
 
@@ -11,10 +13,23 @@ import {
   templateUrl: './beers-list.component.html',
   styleUrls: ['./beers-list.component.css']
 })
-export class BeersListComponent {
+export class BeersListComponent implements OnChanges{
+
 
   @Input() beerList: Beer[];
 
   @Output() onBeerSelected: EventEmitter<Beer>;
+
+  ngOnInit() {
+    console.log(this.beerList);
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    if(changes['beerList']){
+      console.log(this.beerList);
+    }
+}
+
+
 
 }
