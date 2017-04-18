@@ -180,7 +180,101 @@
   </div>
 </div>
 
+<!-- <app-beers-list
+  [beerList]="beers"
+  (onBeerSelected)="beerWasSelected($event)">
+</app-beers-list> -->
+
+<div class="ui special link cards">
+  <div class="card" *ngFor="let beer of beers">
+    <div class="blurring dimmable image">
+      <div class="ui dimmer">
+        <div class="content">
+          <div class="center">
+            <div class="ui inverted button">Add To Favorites</div>
+          </div>
+        </div>
+      </div>
+      <img src="{{beer.label_url}}">
+    </div>
+    <div class="content">
+      <a class="header">{{beer.name}}</a>
+      <div class="meta">
+        <span class="date">{{beer.type_name}}</span>
+      </div>
+      <div class="description">
+        {{beer.description}}
+      </div>
+    </div>
+    <div class="extra content">
+      <span class="right floated">
+        IBU:
+        {{beer.ibu}}
+      </span>
+      <span>
+        ABV:
+        {{beer.abv}}
+      </span>
+    </div>
+  </div>
+</div>
+
+<!-- <div class="card" *ngFor="let beer of beers">
+  <div class="image">
+    <img width="100px" height="100px" src="{{beer.label_url}}">
+  </div>
+  <div class="content">
+    <div class="header">{{beer.name}}</div>
+    <div class="meta">
+      <a>{{beer.type_name}}</a>
+    </div>
+    <div class="description">
+      {{beer.description}}
+    </div>
+  </div>
+  <div class="extra content">
+    <span class="right floated">
+      IBU:
+      {{beer.ibu}}
+    </span>
+    <span>
+      ABV:
+      {{beer.abv}}
+    </span>
+  </div>
+</div> -->
+
 <!-- <app-footer></app-footer> -->
+
+<div class="ui special cards">
+  <div class="card">
+    <div class="blurring dimmable image">
+      <div class="ui dimmer">
+        <div class="content">
+          <div class="center">
+            <div class="ui inverted button">Add Friend</div>
+          </div>
+        </div>
+      </div>
+      <img src={{beer.label_url}}>
+    </div>
+    <div class="content">
+      <a class="header">Team Fu</a>
+      <div class="meta">
+        <span class="date">Create in Sep 2014</span>
+      </div>
+    </div>
+    <div class="extra content">
+      <a>
+        <i class="users icon"></i>
+        2 Members
+      </a>
+    </div>
+  </div>
+</div>
 
 <script>$('.shape').shape();</script>
 <script>$('.shape').shape('flip up');</script>
+<script>$('.special.cards .image').dimmer({
+  on: 'hover'
+});</script>

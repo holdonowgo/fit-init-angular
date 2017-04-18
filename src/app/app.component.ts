@@ -114,14 +114,6 @@ export class AppComponent {
         "type_name": "Imperial IPA"
       }),
       new Beer({
-        "id": "AQORwA",
-        "name": "Navaja",
-        "abv": "9.5",
-        "label_url": "http://png-4.vector.me/files/images/6/6/668633/duff_beer_thumb.png",
-        "description": "Aggressive in nature, but soft on the eyes.",
-        "type_name": "Imperial IPA"
-      }),
-      new Beer({
         "id": "pN3FPY",
         "name": "Quakerbridge Barleywine",
         "abv": "10",
