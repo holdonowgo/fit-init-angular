@@ -26,7 +26,7 @@ export class BeersListComponent implements OnChanges{
 
   ngOnChanges(changes: SimpleChanges) {
     if(changes['beerList']){
-      console.log(this.beerList);
+      console.log(this.beerList)
     }
 }
 

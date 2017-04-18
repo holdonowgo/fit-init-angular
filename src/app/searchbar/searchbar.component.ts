@@ -23,8 +23,7 @@ export class SearchbarComponent implements OnInit {
 
   performSearch(query: HTMLInputElement): void {
     var apiLink = this.link + query.value;
-    console.log(apiLink);
-    this.http.get(`http://the-ipa-api.herokuapp.com/ipa-api/search?name=${apiLink}`)
+    this.http.get(apiLink)
     .subscribe((res: Response) => {
       var resultArray = res.json();
       var beerArray = [];
