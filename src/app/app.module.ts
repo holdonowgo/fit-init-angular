@@ -9,6 +9,7 @@ import { LandingComponent } from './landing/landing.component';
 import { FooterComponent } from './footer/footer.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { BeersListComponent } from './beers-list/beers-list.component';
+import { SearchbarComponent } from './searchbar/searchbar.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { BeersListComponent } from './beers-list/beers-list.component';
     LandingComponent,
     FooterComponent,
     DashboardComponent,
-    BeersListComponent
+    BeersListComponent,
+    SearchbarComponent
   ],
   imports: [
     BrowserModule,
