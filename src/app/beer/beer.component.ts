@@ -12,14 +12,7 @@ export class BeerComponent implements OnInit {
   @Input() beers: Beer[];
 
   constructor() {
-    // this.beer = new Beer({
-    //   "id": "MlBdyG",
-    //   "name": "Shrub Tundra",
-    //   "abv": "6.3",
-    //   "label_url": "https://s3.amazonaws.com/brewerydbapi/beer/MlBdyG/upload_5Nj0ib-medium.png",
-    //   "description": "The amalgamate child of two Half Acre passions: beer and coffee. Brewed with loads of Dark Matter coffee, this beer ends up around 3% mood booster. Watch for it in early spring.",
-    //   "type_name": "Coffee Beer"
-    // });
+
   }
 
   ngOnInit() {
