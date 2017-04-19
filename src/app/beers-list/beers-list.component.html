@@ -1,13 +1,6 @@
 <div class="ui special cards">
-  <div class="card" *ngFor="let beer of beers">
+  <!-- <div class="card" *ngFor="let beer of beers"> -->
+  <div class="card" *ngFor="let beer of beerList" (result)="result($event)">
     <app-beer [beer]="beer"></app-beer>
   </div>
 </div>
-
-<script>
-
-$('.special.cards .image').dimmer({
-  on: 'hover'
-});
-
-</script>

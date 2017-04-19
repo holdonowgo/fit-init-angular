@@ -10,6 +10,7 @@ import { FooterComponent } from './footer/footer.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { BeersListComponent } from './beers-list/beers-list.component';
 import { BeerComponent } from './beer/beer.component';
+import { SearchbarComponent } from './searchbar/searchbar.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { BeerComponent } from './beer/beer.component';
     FooterComponent,
     DashboardComponent,
     BeersListComponent,
-    BeerComponent
+    BeerComponent,
+    SearchbarComponent
   ],
   imports: [
     BrowserModule,

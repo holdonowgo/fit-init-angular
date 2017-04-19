@@ -5,7 +5,9 @@ import {
   OnInit,
   Output,
   AfterContentInit,
-  AfterViewInit
+  AfterViewInit,
+  SimpleChanges,
+  OnChanges
 } from '@angular/core';
 import $ from 'jquery';
 import { Beer } from '../beer.model';
@@ -15,8 +17,10 @@ import { Beer } from '../beer.model';
   templateUrl: './beers-list.component.html',
   styleUrls: ['./beers-list.component.css']
 })
-export class BeersListComponent implements OnInit {
+
+export class BeersListComponent implements OnInit, OnChanges {
   beers: Beer[];
+
   @Input() beerList: Beer[];
 
   @Output() onBeerSelected: EventEmitter<Beer>;
@@ -144,7 +148,8 @@ export class BeersListComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log('beers:', this.beers);
+    console.log('beers-list-beers:', this.beers);
+    console.log('beers-list-beerList:', this.beerList);
     // $('.special.cards .image').dimmer({
     //   on: 'hover'
     // });
@@ -157,8 +162,16 @@ export class BeersListComponent implements OnInit {
   }
 
   ngAfterViewInit() {
-    $('.special.cards .image').dimmer({
-      on: 'hover'
-    });
+      console.log('beers-list-beers:', this.beers);
+      console.log('beers-list-beerList:', this.beerList);
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    if(changes['beerList']){
+      console.log(this.beerList)
+    }
+      if(changes['beers']){
+        console.log(this.beers)
+      }
   }
 }
