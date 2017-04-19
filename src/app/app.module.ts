@@ -9,6 +9,7 @@ import { LandingComponent } from './landing/landing.component';
 import { FooterComponent } from './footer/footer.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { BeersListComponent } from './beers-list/beers-list.component';
+import { BeerComponent } from './beer/beer.component';
 import { SearchbarComponent } from './searchbar/searchbar.component';
 
 @NgModule({
@@ -19,6 +20,7 @@ import { SearchbarComponent } from './searchbar/searchbar.component';
     FooterComponent,
     DashboardComponent,
     BeersListComponent,
+    BeerComponent,
     SearchbarComponent
   ],
   imports: [

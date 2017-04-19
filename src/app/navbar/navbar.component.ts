@@ -10,17 +10,12 @@ export class NavbarComponent implements OnInit {
 
   constructor() { }
 
-  company = 'Fit-Init';
+  company = 'IPA-API';
 
-  header = 'Initiate Your Fitness';
+  header = "You Can Always Drink More, But You Can't Drink Less";
 
-  text = `Fit-Init is here to redifine the way you think about fitness.
-          From routines, to excersizes, to complex charts mapping your progress and training,
-          fit init provides the solutions you need to get fit now!
-          Fit-Init Dashboard uses state of the art tracking technology and complex data mapping to give you all you need to formulate your ideal routine.
-          In addition we have routines, exercises and more to get you started.
-          Whether you want to loose 200lbs or get 1st place in that turkey trot 5k, fit-init provides the tools to get you there.
-          What are you waiting for?!`;
+  text = `“Whoever drinks beer, he is quick to sleep; whoever sleeps long, does not sin; whoever does not sin, enters Heaven! Thus, let us drink beer!`;
+  author = `-Martin Luther`;
 
   // toggleSideBar(): void {
   //   $('.ui.sidebar').sidebar('toggle');
