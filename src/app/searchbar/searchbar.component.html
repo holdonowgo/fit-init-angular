@@ -1,8 +1,18 @@
-<div class="ui action input">
+<!-- <div class="ui action input">
   <input type="text" placeholder="Search..." #query>
   <button (click)="performSearch(query)" class="ui button">Search</button>
+</div> -->
+
+<div class="item">
+  <div class="ui icon input">
+    <input type="text" placeholder="Search..." #query>
+    <i class="search link icon" (click)="performSearch(query)"></i>
+  </div>
 </div>
+
 <div *ngIf="loading">
+  <img src="http://nycbeerweek.com/wp-content/themes/nycbg/img/preload.gif" alt="">
   Loading...
 </div>
-<app-beers-list [beerList]="beerList">HELLO</app-beers-list>
+
+<app-beers-list *ngIf="!loading" [beerList]="beerList"></app-beers-list>

@@ -148,30 +148,22 @@ export class BeersListComponent implements OnInit, OnChanges {
   }
 
   ngOnInit() {
-    console.log('beers-list-beers:', this.beers);
-    console.log('beers-list-beerList:', this.beerList);
-    // $('.special.cards .image').dimmer({
-    //   on: 'hover'
-    // });
+
   }
 
   ngAfterContentInit() {
-    // $('.special.cards .image').dimmer({
-    //   on: 'hover'
-    // });
+
   }
 
   ngAfterViewInit() {
-      console.log('beers-list-beers:', this.beers);
-      console.log('beers-list-beerList:', this.beerList);
+
   }
 
   ngOnChanges(changes: SimpleChanges) {
-    if(changes['beerList']){
-      console.log(this.beerList)
+    if (changes['beerList']) {
     }
-      if(changes['beers']){
-        console.log(this.beers)
-      }
+    if (changes['beers']) {
+      console.log(this.beers)
+    }
   }
 }
