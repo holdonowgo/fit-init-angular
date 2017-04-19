@@ -21,12 +21,11 @@ export class BeersListComponent implements OnChanges{
   @Output() onBeerSelected: EventEmitter<Beer>;
 
   ngOnInit() {
-    console.log(this.beerList);
+
   }
 
   ngOnChanges(changes: SimpleChanges) {
     if(changes['beerList']){
-      console.log(this.beerList)
     }
 }
 

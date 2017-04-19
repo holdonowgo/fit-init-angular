@@ -3,6 +3,7 @@
   <button (click)="performSearch(query)" class="ui button">Search</button>
 </div>
 <div *ngIf="loading">
+  <img src="http://nycbeerweek.com/wp-content/themes/nycbg/img/preload.gif" alt="">
   Loading...
 </div>
-<app-beers-list [beerList]="beerList"></app-beers-list>
+<app-beers-list *ngIf="!loading" [beerList]="beerList"></app-beers-list>

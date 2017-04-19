@@ -28,17 +28,24 @@ export class SearchbarComponent implements OnInit {
     var apiLink = this.link + query.value;
     this.http.get(apiLink)
     .subscribe((res: Response) => {
+      console.log(res);
       var resultArray = res.json();
       var beerArray = [];
       for (let i = 0; i < resultArray.length; i++) {
           var beer = new Beer(resultArray[i]);
-          beerArray.push(beer);
+          if(beer.label_url !== 'http://png-4.vector.me/files/images/6/6/668633/duff_beer_thumb.png'){
+            beerArray.push(beer);
+          }
           this.loading = false;
       }
-      console.log(beerArray);
 
       this.beerList = beerArray;
-    });
+    },
+    (err: any) => {
+      console.log(err);
+      this.loading = false;
+    }
+  );
   }
 
 }
