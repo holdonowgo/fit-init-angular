@@ -1,5 +1,5 @@
 import { Component, OnInit, EventEmitter,
- Output,} from '@angular/core';
+ Output } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import { Beer } from '../beer.model';
 
@@ -16,7 +16,7 @@ export class SearchbarComponent implements OnInit {
   link = `http://the-ipa-api.herokuapp.com/ipa-api/search?name=`;
 
   constructor(http: Http) {
-    this.http = http
+    this.http = http;
   }
 
   ngOnInit() {
@@ -25,16 +25,15 @@ export class SearchbarComponent implements OnInit {
 
   performSearch(query: HTMLInputElement): void {
     this.loading = true;
-    var apiLink = this.link + query.value;
+    const apiLink = this.link + query.value;
     this.http.get(apiLink)
     .subscribe((res: Response) => {
-      console.log(res);
-      var resultArray = res.json();
-      var beerArray = [];
+      const resultArray = res.json();
+      const beerArray = [];
       for (let i = 0; i < resultArray.length; i++) {
-          var beer = new Beer(resultArray[i]);
-          if(beer.label_url !== 'http://png-4.vector.me/files/images/6/6/668633/duff_beer_thumb.png'){
-            beerArray.push(beer);
+          const beer = new Beer(resultArray[i]);
+          if (beer.label_url !== 'http://png-4.vector.me/files/images/6/6/668633/duff_beer_thumb.png') {
+             beerArray.push(beer);
           }
           this.loading = false;
       }

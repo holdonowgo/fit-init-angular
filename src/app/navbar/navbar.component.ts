@@ -7,15 +7,20 @@ import $ from 'jquery';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
+  company: string;
+  header: string;
+  text: string;
+  author: string;
 
-  constructor() { }
+  constructor() {
 
-  company = 'IPA-API';
+  this.company = 'IPA-API';
 
-  header = "You Can Always Drink More, But You Can't Drink Less";
+  this.header = 'You Can Always Drink More, But You Can\'t Drink Less';
 
-  text = `“Whoever drinks beer, he is quick to sleep; whoever sleeps long, does not sin; whoever does not sin, enters Heaven! Thus, let us drink beer!`;
-  author = `-Martin Luther`;
+  this.text = `“Whoever drinks beer, he is quick to sleep; whoever sleeps long, does not sin; whoever does not sin, enters Heaven! Thus, let us drink beer!`;
+  this.author = `-Martin Luther`;
+  }
 
   // toggleSideBar(): void {
   //   $('.ui.sidebar').sidebar('toggle');
