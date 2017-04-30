@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Beer } from '../beer.model';
+import { Beer } from '../models/beer.model';
 import $ from 'jquery';
 
 @Component({

@@ -10,7 +10,7 @@ import {
   OnChanges
 } from '@angular/core';
 import $ from 'jquery';
-import { Beer } from '../beer.model';
+import { Beer } from '../models/beer.model';
 
 @Component({
   selector: 'app-beers-list',
